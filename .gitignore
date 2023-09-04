@@ -1,0 +1,22 @@
+# phpstorm project files
+.idea
+
+# composer vendor dir
+vendor
+
+# Mac DS_Store Files
+.DS_Store
+
+# phpunit itself is not needed
+phpunit.phar
+
+# local phpunit config
+phpunit.xml
+.phpunit.result.cache
+
+# local phpcs config
+phpcs.xml
+.phpcs-cache
+
+# local phpmd config
+phpmd.xml
