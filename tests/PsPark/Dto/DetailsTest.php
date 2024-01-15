@@ -9,6 +9,7 @@ use PsPark\Dto\Details\Bank;
 use PsPark\Dto\Details\BillingInfo;
 use PsPark\Dto\Details\Crypto;
 use PsPark\Dto\Details\Customer;
+use PsPark\Dto\Details\EscrowPayment;
 
 class DetailsTest extends TestCase
 {
@@ -19,14 +20,16 @@ class DetailsTest extends TestCase
             billingInfo: $billingInfo = new BillingInfo('Address'),
             crypto: $crypto = new Crypto('memo'),
             bank: $bank = new Bank('Bank ID'),
+            escrowPayment: $payment = new EscrowPayment('uuid'),
         );
 
         $this->assertEquals(
             array_filter([
-                'customer'     => $customer->asArray(),
-                'billing_info' => $billingInfo->asArray(),
-                'crypto'       => $crypto->asArray(),
-                'bank'         => $bank->asArray(),
+                'customer'      => $customer->asArray(),
+                'billing_info'  => $billingInfo->asArray(),
+                'crypto'        => $crypto->asArray(),
+                'bank'          => $bank->asArray(),
+                'escrowPayment' => $payment->asArray(),
             ]),
             $userDataDto->asArray()
         );
