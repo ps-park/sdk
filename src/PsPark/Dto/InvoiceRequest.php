@@ -40,17 +40,20 @@ class InvoiceRequest implements RequestDtoInterface
      */
     public function asArray(): array
     {
-        return array_filter([
-            'reference'    => $this->reference,
-            'amount'       => $this->amount,
-            'nonce'        => $this->nonce,
-            'details'      => $this->details?->asArray(),
-            'title'        => $this->title,
-            'description'  => $this->description,
-            'callback_url' => $this->callbackUrl,
-            'return_url'   => $this->returnUrl,
-            'limit_minute' => $this->timeLimit,
-            ...$this->getIssuedAndExpirationTimes(),
-        ]);
+        return array_filter(
+            [
+                'reference'    => $this->reference,
+                'amount'       => $this->amount,
+                'nonce'        => $this->nonce,
+                'details'      => $this->details?->asArray(),
+                'title'        => $this->title,
+                'description'  => $this->description,
+                'callback_url' => $this->callbackUrl,
+                'return_url'   => $this->returnUrl,
+                'limit_minute' => $this->timeLimit,
+                ...$this->getIssuedAndExpirationTimes(),
+            ],
+            static fn ($item): bool => ($item !== null && $item !== false && $item !== '')
+        );
     }
 }

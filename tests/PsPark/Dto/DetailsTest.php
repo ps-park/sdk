@@ -25,11 +25,11 @@ class DetailsTest extends TestCase
 
         $this->assertEquals(
             array_filter([
-                'customer'      => $customer->asArray(),
-                'billing_info'  => $billingInfo->asArray(),
-                'crypto'        => $crypto->asArray(),
-                'bank'          => $bank->asArray(),
-                'escrowPayment' => $payment->asArray(),
+                'customer'       => $customer->asArray(),
+                'billing_info'   => $billingInfo->asArray(),
+                'crypto'         => $crypto->asArray(),
+                'bank'           => $bank->asArray(),
+                'escrow_payment' => $payment->asArray(),
             ]),
             $userDataDto->asArray()
         );
