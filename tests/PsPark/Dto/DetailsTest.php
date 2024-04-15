@@ -16,7 +16,11 @@ class DetailsTest extends TestCase
     public function testAsArray(): void
     {
         $userDataDto = new Details(
-            customer: $customer = new Customer('First Name', 'Last Name'),
+            customer: $customer = new Customer(
+                firstName: 'First Name',
+                lastName: 'Last Name',
+                customerId: 'customer-id',
+            ),
             billingInfo: $billingInfo = new BillingInfo('Address'),
             crypto: $crypto = new Crypto('memo'),
             bank: $bank = new Bank('Bank ID'),
