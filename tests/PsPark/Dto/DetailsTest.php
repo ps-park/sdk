@@ -10,6 +10,8 @@ use PsPark\Dto\Details\BillingInfo;
 use PsPark\Dto\Details\Crypto;
 use PsPark\Dto\Details\Customer;
 use PsPark\Dto\Details\EscrowPayment;
+use PsPark\Dto\Details\Ui;
+use PsPark\Dto\Details\WebData;
 
 class DetailsTest extends TestCase
 {
@@ -25,6 +27,8 @@ class DetailsTest extends TestCase
             crypto: $crypto = new Crypto('memo'),
             bank: $bank = new Bank('Bank ID'),
             escrowPayment: $payment = new EscrowPayment('uuid'),
+            webData: $webData = new WebData(userAgent: 'Firefox'),
+            ui: $ui = new Ui('en'),
         );
 
         $this->assertEquals(
@@ -34,6 +38,8 @@ class DetailsTest extends TestCase
                 'crypto'         => $crypto->asArray(),
                 'bank'           => $bank->asArray(),
                 'escrow_payment' => $payment->asArray(),
+                'web_data'       => $webData->asArray(),
+                'ui'             => $ui->asArray(),
             ]),
             $userDataDto->asArray()
         );
