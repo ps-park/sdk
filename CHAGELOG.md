@@ -1,6 +1,6 @@
 This changelog references the relevant changes (bug and security fixes).
 
-**0.0.4** - _03.04.2024_
+**0.0.5** - _03.04.2024_
 * Added new dto.
 
 **0.0.4** - _03.04.2024_
