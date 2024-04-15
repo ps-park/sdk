@@ -6,9 +6,12 @@ namespace PsPark\Dto;
 
 use PsPark\Dto\Details\Bank;
 use PsPark\Dto\Details\BillingInfo;
+use PsPark\Dto\Details\CardData;
 use PsPark\Dto\Details\Crypto;
 use PsPark\Dto\Details\Customer;
 use PsPark\Dto\Details\EscrowPayment;
+use PsPark\Dto\Details\Ui;
+use PsPark\Dto\Details\WebData;
 
 class Details implements RequestDtoInterface
 {
@@ -18,6 +21,9 @@ class Details implements RequestDtoInterface
         private readonly Crypto|null $crypto = null,
         private readonly Bank|null $bank = null,
         private readonly EscrowPayment|null $escrowPayment = null,
+        private readonly Ui|null $ui = null,
+        private readonly WebData|null $webData = null,
+        private readonly CardData|null $cardData = null,
     ) {
     }
 
@@ -30,6 +36,9 @@ class Details implements RequestDtoInterface
      *     crypto: array|null,
      *     bank: array|null,
      *     escrow_payment: array|null,
+     *     ui: array|null,
+     *     web_data: array|null,
+     *     card_data: array|null,
      * }
      */
     public function asArray(): array
@@ -40,6 +49,9 @@ class Details implements RequestDtoInterface
             'crypto'         => $this->crypto?->asArray(),
             'bank'           => $this->bank?->asArray(),
             'escrow_payment' => $this->escrowPayment?->asArray(),
+            'ui'             => $this->ui?->asArray(),
+            'web_data'       => $this->webData?->asArray(),
+            'card_data'       => $this->cardData?->asArray(),
         ]);
     }
 }
