@@ -14,6 +14,7 @@ class Customer implements RequestDtoInterface
         private readonly ?string $email = null,
         private readonly ?string $phone = null,
         private readonly ?string $customerId = null,
+        private readonly ?string $nationalId = null,
     ) {
     }
 
@@ -26,6 +27,7 @@ class Customer implements RequestDtoInterface
      *     email: string|null,
      *     phone: string|null,
      *     customer_id: string|null,
+     *     national_id: string|null,
      * }
      */
     public function asArray(): array
@@ -36,6 +38,7 @@ class Customer implements RequestDtoInterface
             'email'       => $this->email,
             'phone'       => $this->phone,
             'customer_id' => $this->customerId,
+            'national_id' => $this->nationalId,
         ]);
     }
 }
