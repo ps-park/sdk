@@ -36,6 +36,7 @@ class InvoiceRequestTest extends TestCase
                     lastName: $customer['last_name'] ?? null,
                     email: $customer['email'] ?? null,
                     phone: $customer['phone'] ?? null,
+                    nationalId: $customer['national_id'] ?? null,
                 ),
                 billingInfo: new BillingInfo(
                     address: $billingInfo['address'] ?? null,
@@ -86,11 +87,12 @@ class InvoiceRequestTest extends TestCase
                     'title'        => 'Title',
                     'description'  => 'Description',
                     'details'      => [
-                        'customer'     => [
-                            'first_name' => 'First Name',
-                            'last_name'  => 'Last Name',
-                            'email'      => 'email',
-                            'phone'      => 'phone',
+                        'customer' => [
+                            'first_name'  => 'First Name',
+                            'last_name'   => 'Last Name',
+                            'email'       => 'email',
+                            'phone'       => 'phone',
+                            'national_id' => '1234566789',
                         ],
                         'billing_info' => [
                             'address'      => 'Address',

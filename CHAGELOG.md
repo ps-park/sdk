@@ -1,5 +1,8 @@
 This changelog references the relevant changes (bug and security fixes).
 
+**0.0.6** - _12.09.2024_
+* Added `national_id` field to Customer DTO.
+
 **0.0.5** - _03.04.2024_
 * Added new dto.
 
