@@ -50,11 +50,15 @@ class WithdrawalRequestTest extends TestCase
                     lastName: $customer['last_name'] ?? null,
                     email: $customer['email'] ?? null,
                     phone: $customer['phone'] ?? null,
+                    nationalId: $customer['national_id'] ?? null,
                 ),
                 billingInfo: new BillingInfo(
                     address: $billingInfo['address'] ?? null,
                     countryCode: $billingInfo['country_code'] ?? null,
                     country: $billingInfo['country'],
+                    city: $billingInfo['city'] ?? null,
+                    postCode: $billingInfo['post_code'] ?? null,
+                    region: $billingInfo['region'] ?? null,
                 ),
                 crypto: new Crypto(memo: $crypto['memo'] ?? null),
                 bank: new Bank(
@@ -94,16 +98,20 @@ class WithdrawalRequestTest extends TestCase
                     'callback_url' => 'http://test-callback-url.com',
                     'nonce'        => 123456,
                     'details'      => [
-                        'customer'     => [
-                            'first_name' => 'First Name',
-                            'last_name'  => 'Last Name',
-                            'email'      => 'email',
-                            'phone'      => 'phone',
+                        'customer' => [
+                            'first_name'  => 'First Name',
+                            'last_name'   => 'Last Name',
+                            'email'       => 'email',
+                            'phone'       => 'phone',
+                            'national_id' => '1234566789',
                         ],
                         'billing_info' => [
                             'address'      => 'Address',
-                            'country_code' => 'Country Code',
-                            'country'      => 'Country',
+                            'country_code' => 'IND',
+                            'country'      => 'India',
+                            'city'         => 'Mumbai',
+                            'post_code'    => 'Country',
+                            'region'       => 'Maharashtra',
                         ],
                         'crypto'       => [
                             'memo' => 'memo'

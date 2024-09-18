@@ -18,8 +18,8 @@ class WebData implements RequestDtoInterface
      * @return array
      *
      * @psalm-return array{
-     *     ip: string|null,
-     *     user_agent: string|null,
+     *     ip?: string|null,
+     *     user_agent?: string|null,
      * }
      */
     public function asArray(): array

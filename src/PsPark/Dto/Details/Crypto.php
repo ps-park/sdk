@@ -17,7 +17,7 @@ class Crypto implements RequestDtoInterface
      * @return array
      *
      * @psalm-return array{
-     *     memo: string|null,
+     *     memo?: string|int|null,
      * }
      */
     public function asArray(): array
