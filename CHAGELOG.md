@@ -1,5 +1,8 @@
 This changelog references the relevant changes (bug and security fixes).
 
+**0.0.7** - _18.09.2024_
+* Added new fields to BillingInfo DTO.
+
 **0.0.6** - _12.09.2024_
 * Added `national_id` field to Customer DTO.
 

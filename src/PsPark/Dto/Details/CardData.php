@@ -18,8 +18,8 @@ class CardData implements RequestDtoInterface
      * @return array
      *
      * @psalm-return array{
-     *     exp_month: string|null,
-     *     exp_year: string|null,
+     *     exp_month?: string|null,
+     *     exp_year?: string|null,
      * }
      */
     public function asArray(): array

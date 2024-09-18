@@ -17,7 +17,7 @@ class Ui implements RequestDtoInterface
      * @return array
      *
      * @psalm-return array{
-     *     language: string|null,
+     *     language?: string|null,
      * }
      */
     public function asArray(): array

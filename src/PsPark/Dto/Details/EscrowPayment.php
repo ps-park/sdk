@@ -17,7 +17,7 @@ class EscrowPayment implements RequestDtoInterface
      * @return array
      *
      * @psalm-return array{
-     *     payment_wallet_id: string|null,
+     *     payment_wallet_id?: string|null,
      * }
      */
     public function asArray(): array

@@ -19,9 +19,9 @@ class Bank implements RequestDtoInterface
      * @return array
      *
      * @psalm-return array{
-     *     id: string|null,
-     *     name: string|null,
-     *     account: string|null,
+     *     id?: string|null,
+     *     name?: string|null,
+     *     account?: string|null,
      * }
      */
     public function asArray(): array

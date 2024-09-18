@@ -22,12 +22,12 @@ class Customer implements RequestDtoInterface
      * @return array
      *
      * @psalm-return array{
-     *     first_name: string|null,
-     *     last_name: string|null,
-     *     email: string|null,
-     *     phone: string|null,
-     *     customer_id: string|null,
-     *     national_id: string|null,
+     *     first_name?: string|null,
+     *     last_name?: string|null,
+     *     email?: string|null,
+     *     phone?: string|null,
+     *     customer_id?: string|null,
+     *     national_id?: string|null,
      * }
      */
     public function asArray(): array
