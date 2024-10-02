@@ -33,7 +33,6 @@ namespace App;
 use PsPark\PsPark;
 use PsPark\Config;
 
-```php
 $pspark = new PsPark(new Config(jwtKey: 'jwt-key', apiKey: 'api-key'));
 $result = $pspark->getBalance(new BalanceRequest(nonce: time()))->asArray();
 ```

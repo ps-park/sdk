@@ -51,6 +51,7 @@ class WithdrawalRequestTest extends TestCase
                     email: $customer['email'] ?? null,
                     phone: $customer['phone'] ?? null,
                     nationalId: $customer['national_id'] ?? null,
+                    taxpayerIdentificationNumber: $customer['taxpayer_identification_number'] ?? null,
                 ),
                 billingInfo: new BillingInfo(
                     address: $billingInfo['address'] ?? null,
@@ -99,11 +100,12 @@ class WithdrawalRequestTest extends TestCase
                     'nonce'        => 123456,
                     'details'      => [
                         'customer' => [
-                            'first_name'  => 'First Name',
-                            'last_name'   => 'Last Name',
-                            'email'       => 'email',
-                            'phone'       => 'phone',
-                            'national_id' => '1234566789',
+                            'first_name'                     => 'First Name',
+                            'last_name'                      => 'Last Name',
+                            'email'                          => 'email',
+                            'phone'                          => 'phone',
+                            'national_id'                    => '1234566789',
+                            'taxpayer_identification_number' => '23456-33224',
                         ],
                         'billing_info' => [
                             'address'      => 'Address',
