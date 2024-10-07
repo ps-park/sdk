@@ -15,6 +15,7 @@ class BillingInfo implements RequestDtoInterface
         private readonly ?string $city = null,
         private readonly ?string $postCode = null,
         private readonly ?string $region = null,
+        private readonly ?string $paymentPurpose = null,
     ) {
     }
 
@@ -28,17 +29,19 @@ class BillingInfo implements RequestDtoInterface
      *     city?: string|null,
      *     post_code?: string|null,
      *     region?: string|null,
+     *     payment_purpose?: string|null,
      * }
      */
     public function asArray(): array
     {
         return array_filter([
-            'address'      => $this->address,
-            'country_code' => $this->countryCode,
-            'country'      => $this->country,
-            'city'         => $this->city,
-            'post_code'    => $this->postCode,
-            'region'       => $this->region,
+            'address'         => $this->address,
+            'country_code'    => $this->countryCode,
+            'country'         => $this->country,
+            'city'            => $this->city,
+            'post_code'       => $this->postCode,
+            'region'          => $this->region,
+            'payment_purpose' => $this->paymentPurpose,
         ]);
     }
 }
