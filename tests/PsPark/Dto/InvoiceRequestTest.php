@@ -47,6 +47,7 @@ class InvoiceRequestTest extends TestCase
                     postCode: $billingInfo['post_code'] ?? null,
                     region: $billingInfo['region'] ?? null,
                     paymentPurpose: $billingInfo['payment_purpose'] ?? null,
+                    street: $billingInfo['street'] ?? null,
                 ),
                 crypto: new Crypto(memo: $crypto['memo'] ?? null),
                 bank: new Bank(
@@ -108,6 +109,7 @@ class InvoiceRequestTest extends TestCase
                             'post_code'       => 'Country',
                             'region'          => 'Maharashtra',
                             'payment_purpose' => 'Payment purpose',
+                            'street'          => 'Baker Street',
                         ],
                         'crypto'       => [
                             'memo' => 'memo'
