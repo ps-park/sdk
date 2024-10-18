@@ -1,5 +1,8 @@
 This changelog references the relevant changes (bug and security fixes).
 
+**0.0.10** - 18.10.2024_
+* Added street field to BillingInfo DTO.
+
 **0.0.9** - 07.10.2024_
 * Added new field to Billing info DTO.
 
