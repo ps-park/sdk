@@ -67,6 +67,7 @@ class WithdrawalRequestTest extends TestCase
                 bank: new Bank(
                     id: $bank['id'] ?? null,
                     name: $bank['name'] ?? null,
+                    bicCode: $bank['bic_code'] ?? null,
                 ),
             );
         }
@@ -123,8 +124,9 @@ class WithdrawalRequestTest extends TestCase
                             'memo' => 'memo'
                         ],
                         'bank'         => [
-                            'id'   => 'Bank ID',
-                            'name' => 'Bank Name'
+                            'id'       => 'Bank ID',
+                            'name'     => 'Bank Name',
+                            'bic_code' => 'AAAA-BB-CC-123',
                         ],
                     ],
                 ],

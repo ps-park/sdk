@@ -1,5 +1,8 @@
 This changelog references the relevant changes (bug and security fixes).
 
+**0.0.11** - _1.11.2024_
+* Added `bic_code` field to Bank DTO.
+
 **0.0.10** - _18.10.2024_
 * Added street field to BillingInfo DTO.
 

@@ -12,6 +12,7 @@ class Bank implements RequestDtoInterface
         private readonly ?string $id = null,
         private readonly ?string $name = null,
         private readonly ?string $account = null,
+        private readonly ?string $bicCode = null,
     ) {
     }
 
@@ -22,14 +23,16 @@ class Bank implements RequestDtoInterface
      *     id?: string|null,
      *     name?: string|null,
      *     account?: string|null,
+     *     bic_code?: string|null,
      * }
      */
     public function asArray(): array
     {
         return array_filter([
-            'id'      => $this->id,
-            'name'    => $this->name,
-            'account' => $this->account,
+            'id'       => $this->id,
+            'name'     => $this->name,
+            'account'  => $this->account,
+            'bic_code' => $this->bicCode,
         ]);
     }
 }
