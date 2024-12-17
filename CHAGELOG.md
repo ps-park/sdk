@@ -1,5 +1,8 @@
 This changelog references the relevant changes (bug and security fixes).
 
+**0.0.12** - _17.12.2024_
+* Updated WebData and CardData DTOs.
+
 **0.0.11** - _1.11.2024_
 * Added `bic_code` field to Bank DTO.
 
