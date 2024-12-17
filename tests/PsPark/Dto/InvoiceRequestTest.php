@@ -7,10 +7,13 @@ namespace PsPark\Dto;
 use PHPUnit\Framework\TestCase;
 use PsPark\Dto\Details\Bank;
 use PsPark\Dto\Details\BillingInfo;
+use PsPark\Dto\Details\CardData;
 use PsPark\Dto\Details\Crypto;
 use PsPark\Dto\Details\Customer;
+use PsPark\Dto\Details\WebData;
 use PsPark\Trait\JwtIssuerTrait;
 
+/** @package PsPark\Dto */
 class InvoiceRequestTest extends TestCase
 {
     use JwtIssuerTrait;
@@ -29,6 +32,8 @@ class InvoiceRequestTest extends TestCase
             $billingInfo = $invoiceData['details']['billing_info'] ?? [];
             $crypto      = $invoiceData['details']['crypto'] ?? [];
             $bank        = $invoiceData['details']['bank'] ?? [];
+            $cardData    = $invoiceData['details']['card_data'] ?? [];
+            $webData     = $invoiceData['details']['web_data'] ?? [];
 
             $details = new Details(
                 customer: new Customer(
@@ -54,6 +59,25 @@ class InvoiceRequestTest extends TestCase
                     id: $bank['id'] ?? null,
                     name: $bank['name'] ?? null,
                     bicCode: $bank['bic_code'] ?? null,
+                ),
+                cardData: new CardData(
+                    number: $cardData['number'] ?? null,
+                    expMonth: $cardData['exp_month'] ?? null,
+                    expYear: $cardData['exp_year'] ?? null,
+                    cvv: $cardData['cvv'] ?? null,
+                ),
+                webData: new WebData(
+                    ip: $webData['ip'] ?? null,
+                    userAgent: $webData['user_agent'] ?? null,
+                    browserColorDepth: $webData['browser_color_depth'] ?? null,
+                    browserLanguage: $webData['browser_language'] ?? null,
+                    browserScreenHeight: $webData['browser_screen_height'] ?? null,
+                    browserScreenWidth: $webData['browser_screen_width'] ?? null,
+                    browserTimezone: $webData['browser_timezone'] ?? null,
+                    browserTimezoneOffset: $webData['browser_timezone_offset'] ?? null,
+                    browserJavaEnabled: $webData['browser_java_enabled'] ?? null,
+                    browserJavaScriptEnabled: $webData['browser_java_script_enabled'] ?? null,
+                    browserAcceptHeader: $webData['browser_accept_header'] ?? null,
                 ),
             );
         }
@@ -119,6 +143,25 @@ class InvoiceRequestTest extends TestCase
                             'id'       => 'Bank ID',
                             'name'     => 'Bank Name',
                             'bic_code' => 'AAAA-BB-CC-123',
+                        ],
+                        'card_data' => [
+                            'number'    => 4111111111111111,
+                            'exp_month' => '12',
+                            'exp_year'  => '2050',
+                            'cvv'       => 123,
+                        ],
+                        'web_data' => [
+                            'ip'                          => '127.0.0.1',
+                            'user_agent'                  => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36',
+                            'browser_color_depth'         => 30,
+                            'browser_language'            => 'en-GB,en-US;q=0.9,en;q=0.8',
+                            'browser_screen_height'       => 1080,
+                            'browser_screen_width'        => 1920,
+                            'browser_timezone'            => 'Europe/Kiev',
+                            'browser_timezone_offset'     => -120,
+                            'browser_java_enabled'        => false,
+                            'browser_java_script_enabled' => true,
+                            'browser_accept_header'       => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,/;q=0.8',
                         ],
                     ],
                 ],
