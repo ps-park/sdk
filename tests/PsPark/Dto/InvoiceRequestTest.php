@@ -43,6 +43,7 @@ class InvoiceRequestTest extends TestCase
                     phone: $customer['phone'] ?? null,
                     nationalId: $customer['national_id'] ?? null,
                     taxpayerIdentificationNumber: $customer['taxpayer_identification_number'] ?? null,
+                    birthdate: $customer['birthdate'] ?? null,
                 ),
                 billingInfo: new BillingInfo(
                     address: $billingInfo['address'] ?? null,
@@ -51,6 +52,7 @@ class InvoiceRequestTest extends TestCase
                     city: $billingInfo['city'] ?? null,
                     postCode: $billingInfo['post_code'] ?? null,
                     region: $billingInfo['region'] ?? null,
+                    state: $billingInfo['state'] ?? null,
                     paymentPurpose: $billingInfo['payment_purpose'] ?? null,
                     street: $billingInfo['street'] ?? null,
                 ),
@@ -125,6 +127,7 @@ class InvoiceRequestTest extends TestCase
                             'phone'                          => 'phone',
                             'national_id'                    => '1234566789',
                             'taxpayer_identification_number' => '23456-33224',
+                            'birthdate'                      => '1985-07-24',
                         ],
                         'billing_info' => [
                             'address'         => 'Address',
@@ -133,6 +136,7 @@ class InvoiceRequestTest extends TestCase
                             'city'            => 'Mumbai',
                             'post_code'       => 'Country',
                             'region'          => 'Maharashtra',
+                            'state'           => 'ON',
                             'payment_purpose' => 'Payment purpose',
                             'street'          => 'Baker Street',
                         ],

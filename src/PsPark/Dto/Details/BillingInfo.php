@@ -15,6 +15,7 @@ class BillingInfo implements RequestDtoInterface
         private readonly ?string $city = null,
         private readonly ?string $postCode = null,
         private readonly ?string $region = null,
+        private readonly ?string $state = null,
         private readonly ?string $paymentPurpose = null,
         private readonly ?string $street = null,
     ) {
@@ -43,6 +44,7 @@ class BillingInfo implements RequestDtoInterface
             'city'            => $this->city,
             'post_code'       => $this->postCode,
             'region'          => $this->region,
+            'state'           => $this->state,
             'payment_purpose' => $this->paymentPurpose,
             'street'          => $this->street,
         ]);

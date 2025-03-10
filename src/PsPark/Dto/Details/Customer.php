@@ -16,6 +16,7 @@ class Customer implements RequestDtoInterface
         private readonly ?string $customerId = null,
         private readonly ?string $nationalId = null,
         private readonly ?string $taxpayerIdentificationNumber = null,
+        private readonly ?string $birthdate = null,
     ) {
     }
 
@@ -42,6 +43,7 @@ class Customer implements RequestDtoInterface
             'customer_id'                    => $this->customerId,
             'national_id'                    => $this->nationalId,
             'taxpayer_identification_number' => $this->taxpayerIdentificationNumber,
+            'birthdate'                      => $this->birthdate,
         ]);
     }
 }
