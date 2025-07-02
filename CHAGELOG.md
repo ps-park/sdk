@@ -1,5 +1,8 @@
 This changelog references the relevant changes (bug and security fixes).
 
+**0.0.14** - _02.07.2025_
+* Updated BillingInfo and Customer DTOs.
+
 **0.0.13** - _10.03.2025_
 * Updated BillingInfo and Customer DTOs.
 
