@@ -11,6 +11,7 @@ use PsPark\Dto\Details\BillingInfo;
 use PsPark\Dto\Details\CardData;
 use PsPark\Dto\Details\Crypto;
 use PsPark\Dto\Details\Customer;
+use PsPark\Dto\Details\Project;
 use PsPark\Dto\Details\WebData;
 use PsPark\Trait\JwtIssuerTrait;
 
@@ -48,6 +49,7 @@ class WithdrawalRequestTest extends TestCase
             $bank        = $data['bank'] ?? [];
             $cardData    = $data['card_data'] ?? [];
             $webData     = $data['web_data'] ?? [];
+            $project     = $data['project'] ?? [];
 
             $details = new Details(
                 customer: new Customer(
@@ -93,6 +95,7 @@ class WithdrawalRequestTest extends TestCase
                     browserJavaScriptEnabled: $webData['browser_java_script_enabled'] ?? null,
                     browserAcceptHeader: $webData['browser_accept_header'] ?? null,
                 ),
+                project: new Project($project['url'] ?? null),
             );
         }
 
@@ -170,6 +173,9 @@ class WithdrawalRequestTest extends TestCase
                             'browser_java_enabled'        => false,
                             'browser_java_script_enabled' => true,
                             'browser_accept_header'       => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,/;q=0.8',
+                        ],
+                        'project' => [
+                            'url' => 'https://project-url.com',
                         ],
                     ],
                 ],
