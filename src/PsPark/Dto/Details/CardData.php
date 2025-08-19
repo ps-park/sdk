@@ -12,7 +12,7 @@ class CardData implements RequestDtoInterface
         private readonly ?int $number = null,
         private readonly ?string $expMonth = null,
         private readonly ?string $expYear = null,
-        private readonly ?int $cvv = null,
+        private readonly string|int|null $cvv = null,
     ) {
     }
 
