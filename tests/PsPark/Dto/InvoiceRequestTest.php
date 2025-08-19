@@ -155,7 +155,7 @@ class InvoiceRequestTest extends TestCase
                             'number'    => 4111111111111111,
                             'exp_month' => '12',
                             'exp_year'  => '2050',
-                            'cvv'       => 123,
+                            'cvv'       => '012',
                         ],
                         'web_data' => [
                             'ip'                          => '127.0.0.1',
