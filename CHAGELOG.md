@@ -2,8 +2,11 @@ This changelog references the relevant changes (bug and security fixes).
 
 * Updated `cvv` field to accept both string and int types. Note: support for int is deprecated and will be removed in an upcoming release.
 
-**0.0.15** - _07.10.2025_
+**0.0.16** - _07.10.2025_
 * Updated Customer DTOs.
+
+**0.0.15** - _07.10.2025_
+* Updated CardData DTOs.
 
 **0.0.14** - _02.07.2025_
 * Updated BillingInfo and Customer DTOs.
