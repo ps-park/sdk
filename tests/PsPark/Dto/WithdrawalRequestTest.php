@@ -58,6 +58,7 @@ class WithdrawalRequestTest extends TestCase
                     email: $customer['email'] ?? null,
                     phone: $customer['phone'] ?? null,
                     nationalId: $customer['national_id'] ?? null,
+                    documentType: $customer['document_type'] ?? null,
                     taxpayerIdentificationNumber: $customer['taxpayer_identification_number'] ?? null,
                 ),
                 billingInfo: new BillingInfo(
@@ -135,6 +136,7 @@ class WithdrawalRequestTest extends TestCase
                             'email'                          => 'email',
                             'phone'                          => 'phone',
                             'national_id'                    => '1234566789',
+                            'document_type'                  => 'cpf',
                             'taxpayer_identification_number' => '23456-33224',
                         ],
                         'billing_info' => [

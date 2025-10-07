@@ -45,6 +45,7 @@ class InvoiceRequestTest extends TestCase
                     phone: $customer['phone'] ?? null,
                     nationalId: $customer['national_id'] ?? null,
                     taxpayerIdentificationNumber: $customer['taxpayer_identification_number'] ?? null,
+                    documentType: $customer['document_type'] ?? null,
                     birthdate: $customer['birthdate'] ?? null,
                 ),
                 billingInfo: new BillingInfo(
@@ -130,6 +131,7 @@ class InvoiceRequestTest extends TestCase
                             'phone'                          => 'phone',
                             'national_id'                    => '1234566789',
                             'taxpayer_identification_number' => '23456-33224',
+                            'document_type'                  => 'cpf',
                             'birthdate'                      => '1985-07-24',
                         ],
                         'billing_info' => [

@@ -16,6 +16,7 @@ class Customer implements RequestDtoInterface
         private readonly ?string $customerId = null,
         private readonly ?string $nationalId = null,
         private readonly ?string $taxpayerIdentificationNumber = null,
+        private readonly ?string $documentType = null,
         private readonly ?string $birthdate = null,
     ) {
     }
@@ -31,6 +32,8 @@ class Customer implements RequestDtoInterface
      *     customer_id?: string|null,
      *     national_id?: string|null,
      *     taxpayer_identification_number?: string|null,
+     *     document_type?: string|null,
+     *     birthdate?: string|null,
      * }
      */
     public function asArray(): array
@@ -43,6 +46,7 @@ class Customer implements RequestDtoInterface
             'customer_id'                    => $this->customerId,
             'national_id'                    => $this->nationalId,
             'taxpayer_identification_number' => $this->taxpayerIdentificationNumber,
+            'document_type'                  => $this->documentType,
             'birthdate'                      => $this->birthdate,
         ]);
     }
