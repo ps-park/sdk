@@ -17,7 +17,7 @@ openssl req -new -newkey rsa:4096 -nodes -keyout pspakr_secret.key -out pspark_p
 Make sure you keep the API secret key (**pspark_secret.key**) safe and secure. Do not share your API secret key with
 anyone.
 To get your **API-key** you should upload your **pspark_public_key** in
-the [cabinet.pspark.io](htts://cabinet.pspark.io).
+the [cabinet.ppark.io](htts://cabinet.pspark.io).
 
 ## Request examples
 
@@ -61,4 +61,4 @@ the code, and it's description will be presented in the response body as shown b
 ```
 
 Each time when the server's response will have some validation errors, the SDK will throw `ResponseValidationException`
-exception. All types of validation errors can be find in the [API Doc](https://doc.pspark.io).
+exception. All types of validation errors can be find in the [API Doc](https://doc.ppark.io).
