@@ -118,7 +118,7 @@ class ConfiguredHttpRequestTest extends TestCase
     public function testGetFullUrlWithoutDebugMode(): void
     {
         $testUrl = ApiUrl::WALLET_WITHDRAWAL_CREATE;
-        $baseUrl = 'https://api.pspark.io';
+        $baseUrl = 'https://api.ppark.io';
 
         $request = new ConfigurableHttpRequest(
             new HttpRequest(),

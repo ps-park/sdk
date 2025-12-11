@@ -98,7 +98,7 @@ class HttpRequestTest extends TestCase
     public function testGetFullUrl(): void
     {
         $testUrl = ApiUrl::WALLET_WITHDRAWAL_CREATE;
-        $baseUrl = 'https://api.pspark.io';
+        $baseUrl = 'https://api.ppark.io';
         $this->request->withUrl($testUrl);
 
         $this->assertSame(
@@ -131,7 +131,7 @@ class HttpRequestTest extends TestCase
     {
         $testInvoiceUrl = ApiUrl::WALLET_INVOICE_CREATE;
         $testInvoiceWalletId = 'DA53924D-6888-4A37-B211-B2797C4BD496';
-        $baseUrl = 'https://api.pspark.io';
+        $baseUrl = 'https://api.ppark.io';
 
         $invoiceRequest = clone $this->request;
 
