@@ -13,7 +13,7 @@ interface ResponseInterface
     /**
      * @return array|mixed|null
      */
-    public function getInfo(string $type = null): mixed;
+    public function getInfo(?string $type = null): mixed;
 
     public function getContent(): string;
 
