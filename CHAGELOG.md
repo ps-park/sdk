@@ -2,6 +2,9 @@ This changelog references the relevant changes (bug and security fixes).
 
 * Updated `cvv` field to accept both string and int types. Note: support for int is deprecated and will be removed in an upcoming release.
 
+**0.0.18** - _26.01.2026_
+* Updated codebase to be compatible with PHP 8.4.
+
 **0.0.17** - _11.12.2025_
 * Changed domain.
 

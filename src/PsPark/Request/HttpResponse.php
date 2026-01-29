@@ -36,7 +36,7 @@ class HttpResponse implements ResponseInterface
         return curl_error($this->curlHandle);
     }
 
-    public function getInfo(string $type = null): mixed
+    public function getInfo(?string $type = null): mixed
     {
         $info = curl_getinfo($this->curlHandle);
 
