@@ -10,6 +10,7 @@ use PsPark\Dto\Details\BillingInfo;
 use PsPark\Dto\Details\CardData;
 use PsPark\Dto\Details\Crypto;
 use PsPark\Dto\Details\Customer;
+use PsPark\Dto\Details\Payway;
 use PsPark\Dto\Details\Project;
 use PsPark\Dto\Details\WebData;
 use PsPark\Trait\JwtIssuerTrait;
@@ -36,6 +37,7 @@ class InvoiceRequestTest extends TestCase
             $cardData    = $invoiceData['details']['card_data'] ?? [];
             $webData     = $invoiceData['details']['web_data'] ?? [];
             $project     = $invoiceData['details']['project'] ?? [];
+            $payway      = $invoiceData['details']['payway'] ?? [];
 
             $details = new Details(
                 customer: new Customer(
@@ -85,6 +87,7 @@ class InvoiceRequestTest extends TestCase
                     browserAcceptHeader: $webData['browser_accept_header'] ?? null,
                 ),
                 project: new Project($project['url'] ?? null),
+                payway: new Payway($payway['pwid'] ?? null),
             );
         }
 
@@ -174,6 +177,9 @@ class InvoiceRequestTest extends TestCase
                         ],
                         'project' => [
                             'url' => 'https://project-url.com',
+                        ],
+                        'payway' => [
+                            'pwid' => 'NGN-CARD-YIO1KO',
                         ],
                     ],
                 ],
