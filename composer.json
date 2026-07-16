@@ -2,6 +2,7 @@
   "type": "library",
   "description": "PHP SDK for merchant REST API",
   "name": "pspark/sdk",
+  "license": "MIT",
   "require": {
     "ext-curl": "*",
     "ext-json": "*",
