@@ -1,6 +1,7 @@
 This changelog references the relevant changes (bug and security fixes).
 
-* Updated `cvv` field to accept both string and int types. Note: support for int is deprecated and will be removed in an upcoming release.
+**0.0.19** - _09.07.2026_
+* Added PWID (Payway ID) support: `details.payway.pwid` field on InvoiceRequest and WithdrawalRequest.
 
 **0.0.18** - _26.01.2026_
 * Updated codebase to be compatible with PHP 8.4.
@@ -12,7 +13,7 @@ This changelog references the relevant changes (bug and security fixes).
 * Updated Customer DTOs.
 
 **0.0.15** - _07.10.2025_
-* Updated CardData DTOs.
+* Updated `cvv` field to accept both string and int types. Note: support for int is deprecated and will be removed in an upcoming release.
 
 **0.0.14** - _02.07.2025_
 * Updated BillingInfo and Customer DTOs.
