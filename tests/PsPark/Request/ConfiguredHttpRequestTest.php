@@ -103,7 +103,7 @@ class ConfiguredHttpRequestTest extends TestCase
         $this->assertSame($testUrl, $this->request->getUrl());
     }
 
-    public function testGetFullUrlInDebugMode(): void
+    public function testGetFullUrlWithCustomBaseUrl(): void
     {
         $testUrl = ApiUrl::WALLET_WITHDRAWAL_CREATE;
         $baseUrl = $this->options[Config::CUSTOM_BASE_URL_OPTION];
@@ -115,14 +115,31 @@ class ConfiguredHttpRequestTest extends TestCase
         );
     }
 
-    public function testGetFullUrlWithoutDebugMode(): void
+    public function testGetFullUrlWithCustomBaseUrlWithoutDebugMode(): void
+    {
+        $testUrl = ApiUrl::WALLET_WITHDRAWAL_CREATE;
+        $baseUrl = $this->options[Config::CUSTOM_BASE_URL_OPTION];
+
+        $request = new ConfigurableHttpRequest(
+            new HttpRequest(),
+            new Config('jwtKey', 'apiKey', $this->curlOptions, $this->options),
+        );
+        $request->withUrl($testUrl);
+
+        $this->assertSame(
+            sprintf('%s/%s/%s', $baseUrl, ApiVersion::getDefault()->value, $testUrl->value),
+            $request->getFullUrl()
+        );
+    }
+
+    public function testGetFullUrlWithoutCustomBaseUrl(): void
     {
         $testUrl = ApiUrl::WALLET_WITHDRAWAL_CREATE;
         $baseUrl = 'https://api.ppark.io';
 
         $request = new ConfigurableHttpRequest(
             new HttpRequest(),
-            new Config('jwtKey', 'apiKey', $this->curlOptions, $this->options),
+            (new Config('jwtKey', 'apiKey', $this->curlOptions))->enableDebugMode(),
         );
         $request->withUrl($testUrl);
 

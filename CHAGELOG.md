@@ -1,5 +1,11 @@
 This changelog references the relevant changes (bug and security fixes).
 
+**0.0.21** - _16.09.2026_
+* Custom base URL (`custom_base_url` option) is now applied regardless of debug mode.
+
+**0.0.20** - _16.07.2026_
+* Added MIT license field to `composer.json`.
+
 **0.0.19** - _09.07.2026_
 * Added PWID (Payway ID) support: `details.payway.pwid` field on InvoiceRequest and WithdrawalRequest.
 

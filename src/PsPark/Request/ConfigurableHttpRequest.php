@@ -106,7 +106,7 @@ class ConfigurableHttpRequest extends Request
 
     protected function getBaseUrl(): string
     {
-        if ($this->config->isDebugMode() && $this->config->hasOptions(Config::CUSTOM_BASE_URL_OPTION)) {
+        if ($this->config->hasOptions(Config::CUSTOM_BASE_URL_OPTION)) {
             return $this->config->getOptionByKey(Config::CUSTOM_BASE_URL_OPTION);
         }
 
