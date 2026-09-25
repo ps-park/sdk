@@ -11,6 +11,11 @@ use PsPark\Enum\ApiVersion;
 class HttpRequestTest extends TestCase
 {
     /**
+     * Any part of a path that still looks like ":name" means the placeholder was not replaced.
+     */
+    private const UNRESOLVED_PLACEHOLDER_PATTERN = '#/:\w#';
+
+    /**
      * @var string[]
      */
     private array $defaultHeaders = [
@@ -159,5 +164,54 @@ class HttpRequestTest extends TestCase
             sprintf('%s/%s/%s', $baseUrl, ApiVersion::getDefault()->value, $testBalanceUrl->value),
             $balanceRequest->getFullUrl()
         );
+    }
+
+    /**
+     * @dataProvider urlWithPlaceholderProvider
+     */
+    public function testUrlPlaceholdersAreResolved(ApiUrl $apiUrl): void
+    {
+        $testWalletId = 'DA53924D-6888-4A37-B211-B2797C4BD496';
+        $baseUrl = 'https://api.ppark.io';
+
+        $this->request
+            ->withUrl($apiUrl)
+            ->addUrlParams(ApiUrl::WALLET_ID_PARAM_NAME->value, $testWalletId);
+
+        $fullUrl = $this->request->getFullUrl();
+
+        $this->assertSame(
+            sprintf(
+                '%s/%s/%s',
+                $baseUrl,
+                ApiVersion::getDefault()->value,
+                strtr($apiUrl->value, [':' . ApiUrl::WALLET_ID_PARAM_NAME->value => $testWalletId]),
+            ),
+            $fullUrl
+        );
+
+        $this->assertDoesNotMatchRegularExpression(
+            self::UNRESOLVED_PLACEHOLDER_PATTERN,
+            $fullUrl,
+            sprintf('Url of %s still contains a placeholder.', $apiUrl->name)
+        );
+    }
+
+    /**
+     * Every url of the SDK that has a placeholder in it.
+     *
+     * @return array<string, array{ApiUrl}>
+     */
+    public function urlWithPlaceholderProvider(): array
+    {
+        $urlList = [];
+
+        foreach (ApiUrl::cases() as $apiUrl) {
+            if (preg_match(self::UNRESOLVED_PLACEHOLDER_PATTERN, $apiUrl->value)) {
+                $urlList[$apiUrl->name] = [$apiUrl];
+            }
+        }
+
+        return $urlList;
     }
 }
