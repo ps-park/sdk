@@ -42,9 +42,4 @@ class CurlTransport implements TransportInterface
 
         return new HttpResponse((is_string($result)) ? $result : '', $this->curl);
     }
-
-    public function __destruct()
-    {
-        curl_close($this->curl);
-    }
 }

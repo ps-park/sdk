@@ -1,5 +1,8 @@
 This changelog references the relevant changes (bug and security fixes).
 
+**0.0.22** - _02.11.2026_
+* Updated codebase to be compatible with PHP 8.5.
+
 **0.0.21** - _16.09.2026_
 * Custom base URL (`custom_base_url` option) is now applied regardless of debug mode.
 
