@@ -19,7 +19,6 @@ use PsPark\Transport\CurlTransport;
 use PsPark\Validator\AddressCreateRequestValidator;
 use PsPark\Validator\BalanceRequestValidator;
 use PsPark\Validator\InvoiceCreateRequestValidator;
-use PsPark\Validator\TransactionRequestValidator;
 use PsPark\Validator\WithdrawalRequestValidator;
 
 class ClientFactory implements ClientFactoryInterface
@@ -69,7 +68,6 @@ class ClientFactory implements ClientFactoryInterface
         $validatorStorage->add(ApiUrl::WALLET_ADDRESS_CREATE, new AddressCreateRequestValidator());
         $validatorStorage->add(ApiUrl::WALLET_INVOICE_CREATE, new InvoiceCreateRequestValidator());
         $validatorStorage->add(ApiUrl::WALLET_WITHDRAWAL_CREATE, new WithdrawalRequestValidator());
-        $validatorStorage->add(ApiUrl::TRANSACTION_STATUS, new TransactionRequestValidator());
 
         return $validatorStorage;
     }

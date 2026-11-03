@@ -9,7 +9,6 @@ use PsPark\Dto\BalanceRequest;
 use PsPark\Dto\BalancesRequest;
 use PsPark\Dto\InvoiceRequest;
 use PsPark\Dto\RateRequest;
-use PsPark\Dto\TransactionRequest;
 use PsPark\Dto\WithdrawalRequest;
 use PsPark\Request\ResponseInterface;
 
@@ -24,8 +23,6 @@ interface ApiClientInterface
     public function createWithdrawal(WithdrawalRequest $withdrawalDto): ResponseInterface;
 
     public function createInvoice(InvoiceRequest $invoiceCreateDto): ResponseInterface;
-
-    public function getTransactionStatus(TransactionRequest $transactionDto): ResponseInterface;
 
     public function getRates(RateRequest $rateDto): ResponseInterface;
 }

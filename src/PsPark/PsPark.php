@@ -9,7 +9,6 @@ use PsPark\Dto\BalanceRequest;
 use PsPark\Dto\BalancesRequest;
 use PsPark\Dto\InvoiceRequest;
 use PsPark\Dto\RateRequest;
-use PsPark\Dto\TransactionRequest;
 use PsPark\Dto\WithdrawalRequest;
 use PsPark\Enum\ApiUrl;
 use PsPark\Exception\ClientExceptionInterface;
@@ -95,19 +94,6 @@ final class PsPark implements ApiClientInterface
                 ->withUrl(ApiUrl::WALLET_INVOICE_CREATE)
                 ->addUrlParams(ApiUrl::WALLET_ID_PARAM_NAME->value, $invoiceCreateDto->walletId)
                 ->withBody($invoiceCreateDto->asArray())
-        );
-    }
-
-    /**
-     * @throws ClientExceptionInterface
-     */
-    public function getTransactionStatus(TransactionRequest $transactionDto): ResponseInterface
-    {
-        return $this->client->sendRequest(
-            $this
-                ->request()
-                ->withUrl(ApiUrl::TRANSACTION_STATUS)
-                ->withBody($transactionDto->asArray())
         );
     }
 

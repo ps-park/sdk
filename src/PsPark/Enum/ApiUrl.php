@@ -12,7 +12,6 @@ enum ApiUrl: string
     case WALLET_ADDRESS_CREATE = 'wallet/:walletId/address/create';
     case WALLET_INVOICE_CREATE = 'wallet/:walletId/invoice/create';
     case WALLET_WITHDRAWAL_CREATE = 'wallet/:walletId/withdrawal/create';
-    case TRANSACTION_STATUS = 'wallet/:walletId/transaction/status';
 
     case WALLET_ID_PARAM_NAME = 'walletId';
 }

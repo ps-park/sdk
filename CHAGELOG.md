@@ -1,7 +1,10 @@
 This changelog references the relevant changes (bug and security fixes).
 
-**0.0.22** - _02.11.2026_
+**0.0.23** - _02.11.2026_
 * Updated codebase to be compatible with PHP 8.5.
+
+**0.0.22** - _25.09.2026_
+* Removed the `getTransactionStatus` method together with the `TransactionRequest` DTO and its validator.
 
 **0.0.21** - _16.09.2026_
 * Custom base URL (`custom_base_url` option) is now applied regardless of debug mode.
