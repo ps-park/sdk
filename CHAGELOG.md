@@ -1,6 +1,6 @@
 This changelog references the relevant changes (bug and security fixes).
 
-**0.0.23** - _02.11.2026_
+**1.0.0** - _02.11.2026_
 * Updated codebase to be compatible with PHP 8.5.
 
 **0.0.22** - _25.09.2026_
