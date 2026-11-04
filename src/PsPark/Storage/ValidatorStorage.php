@@ -23,17 +23,17 @@ class ValidatorStorage implements StorageInterface, Countable
 
     public function add(ApiUrl $url, ValidatorInterface $validator): void
     {
-        $this->validatorList->attach($url, $validator);
+        $this->validatorList->offsetSet($url, $validator);
     }
 
     public function exists(ApiUrl $url): bool
     {
-        return $this->validatorList->contains($url);
+        return $this->validatorList->offsetExists($url);
     }
 
     public function get(ApiUrl $url): ?ValidatorInterface
     {
-        if (!$this->validatorList->contains($url)) {
+        if (!$this->validatorList->offsetExists($url)) {
             return null;
         }
 
